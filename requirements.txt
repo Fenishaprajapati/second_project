@@ -1,5 +1,9 @@
 pandas
 numpy
 seaborn
--e .
+matplotlib
+scikit-learn
+catboost
+xgboost
+# -e .
 #whenever we write -e . it will automatically triggers the setup.py for the installations of this packages
