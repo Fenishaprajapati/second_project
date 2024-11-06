@@ -77,6 +77,7 @@ if __name__=="__main__":
     train_arr, test_arr,_= data_transformation.initiate_data_transformation(train_data,test_data)
 
     modeltrainer=ModelTrainer()
-    print("R2 Score of Best Model: ",modeltrainer.initiate_model_trainer(train_arr, test_arr))
+    print("R2 Score of Best Model: %.2f" %modeltrainer.initiate_model_trainer(train_arr, test_arr))
 
 
+# R2 Score of Best Model:  0.8804332983749565
