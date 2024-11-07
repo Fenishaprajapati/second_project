@@ -1,0 +1,41 @@
+option_settings:
+  "aws:elasticbeanstalk:container:python":
+    WSGIPath: application:application
+---------------------------------------------------------------------------------------------
+
+option_settings:
+
+This section is used to set custom configuration options for the Elastic Beanstalk environment.
+Each environment option has a specific namespace (e.g., aws:elasticbeanstalk:container:python) and key-value pairs to define settings.
+
+----------------------------------------------------------------------------------------------
+
+aws:elasticbeanstalk:container:python:
+
+This is the namespace for settings related to the Python container on Elastic Beanstalk.
+It includes various configuration options specifically for Python-based applications, such as the WSGIPath.
+
+----------------------------------------------------------------------------------------------
+
+here,
+    WSGIPath: application:application
+    WSGIPath: <module>:<callable>
+
+  ->application (first part): the name of the Python module where your WSGI 
+    application is located. In your case, it indicates the file application.py.
+
+  ->application (second part): the callable object (typically a function or variable) 
+    that represents the WSGI application instance. Here, application is expected to be the 
+    variable or function in application.py that creates and returns the WSGI app (often an instance of a Flask or Django app).
+
+->application=Flask(__name__)
+
+->app=application
+
+#Route for a home page
+
+->@app.route('/')
+def index():
+    return render_template('index.html')
+
+so it mentions the entry part of the app
